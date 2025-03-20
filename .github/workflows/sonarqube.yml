@@ -29,6 +29,7 @@ jobs:
         run: npm ci
 
       - name: Run frontend tests with coverage
+        working-directory: frontend-react
         run: npm test -- --coverage --watchAll=false --ci
 
       - name: Create sonar properties
