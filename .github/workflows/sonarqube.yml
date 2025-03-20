@@ -25,6 +25,7 @@ jobs:
           cache-dependency-path: frontend-react/package-lock.json
 
       - name: Install frontend dependencies
+        working-directory: frontend-react
         run: npm ci
 
       - name: Run frontend tests with coverage
