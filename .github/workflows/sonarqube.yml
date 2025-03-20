@@ -22,12 +22,14 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: frontend-react/package-lock.json
 
       - name: Install frontend dependencies
+        working-directory: frontend-react
         run: npm ci
 
       - name: Run frontend tests with coverage
+        working-directory: frontend-react
         run: npm test -- --coverage --watchAll=false --ci
 
       - name: Create sonar properties
