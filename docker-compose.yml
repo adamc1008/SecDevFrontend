@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend-flask:
+    image: adan100/lms-backend:latest # Replace with your Docker Hub username
+    ports:
+      - "4000:4000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+    networks:
+      - app-network
+
+  frontend:
+    image: adan100/lms-frontend:latest # Replace with your Docker Hub username
+    ports:
+      - "80:80"
+    depends_on:
+      - backend-flask
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
