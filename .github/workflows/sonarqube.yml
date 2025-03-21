@@ -35,7 +35,7 @@ jobs:
       - name: Create sonar properties
         run: |
           cat > sonar-project.properties << 'EOL'
-          sonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+          sonar.organization=${{ secrets.SONAR_ORGANISATION }}
           sonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
           sonar.projectName=LMS Frontend
           sonar.sources=frontend-react/src
